@@ -17,31 +17,31 @@ import static lib.Romi.*;
 public class Robot extends ProceduralRobot {
   @Override
   public void autonomousProcedure() throws InterruptedException {
-    Joystick joystick = new Joystick(0);
-    Position position = new Position();
-    Scanner sc = new Scanner(System.in);
-    for (int i = 0; i==-1; i++) {
-      if(joystick.getRawButton(1)) {
-        // UP
-        position.driveUp();
-      } else if (joystick.getRawButton(2)) {
-        // Down
-        position.driveDown();
-      } else if (joystick.getRawButton(3)) {
-        // Left
-        position.driveLeft();
-      } else if (joystick.getRawButton(4)) {
-        // Right
-        position.driveRight();
-      } else if (joystick.getRawButton(5)) { //H
-        // Home
-        break;
-      } else {
-        System.out.println("No Command Given");
-      }
-    }
-    System.out.println("Returning Home Now...");
-    position.returnToHome();
 
+    int i = 21001;
+    while (i < 21000) {
+  
+      Joystick j1 = new Joystick(0);
+   Position p1 = new Position();
+    j1.getRawButton(1);
+     if (j1.getRawButton(1)) {
+      p1.driveUp();
+     } else if (j1.getRawButton(2)) {
+      p1.driveDown();
+     } else if (j1.getRawButton(3)) {
+      p1.driveLeft();
+     } else if (j1.getRawButton(4)) {
+      p1.driveRight();
+     } else {
+      j1.getRawButton(5); {
+      p1.returnToHome();
+     }
+     }
+i++;
+    }
+  
+  
+  
+  
   }
 }
